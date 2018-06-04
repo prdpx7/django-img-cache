@@ -5,6 +5,7 @@
 * supports image resizing for all formats 
 * faster image caching at backend on redis/memcached db
 * saving your CDN cost ;)
+* Tested on django >=1.10
 
 ## Installation
 ```shell
