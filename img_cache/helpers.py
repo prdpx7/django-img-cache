@@ -27,13 +27,13 @@ class ImageResize(object):
         self.format = self.name.split('.')[-1]
         self.base64 = None
         if self.q:
-            self.cache_key = CACHE_KEY_PREFIX + '-' + self.url + str(self.q)
+            self.cache_key = CACHE_KEY_PREFIX + '-' + self.url + "?q=" + str(self.q)
         else:
-            self.cache_key = CACHE_KEY_PREFIX + '-' + self.url + str(self.width) + 'x' + str(self.height)
+            self.cache_key = CACHE_KEY_PREFIX + '-' + self.url + "-" + str(self.width) + 'x' + str(self.height)
 
     def _encode(self):
         data = {'width':self.width, 'height': self.height, 'base64':self.base64, 'name':self.name,
-                'url':self.url, 'format':self.format, 'q':self.q, 'cache_key':self.cache_key
+                'url':self.url, 'format':self.format, 'q':self.q
             }
         return json.dumps(data)
 
