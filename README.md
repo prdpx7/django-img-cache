@@ -50,6 +50,16 @@ final image will be of 0.2W and 0.2H, keeping aspect ratio same.
 ```html
 <html>
 {% load imgcache %}
+<head>
+    <style>
+        .img-blur {
+            filter: blur(7px);
+            /* this is needed so Safari keeps sharp edges */
+            transform: scale(1);
+            width: 100%;
+        }
+    </style>
+</head>
 <body>
     <!---
         safe tag for rendering html of img,
